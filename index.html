@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alita Medical Center - Layanan Kesehatan Terpercaya</title>
+    <title>Klinik Alita Medika - Profesional & Terpercaya</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -12,69 +12,58 @@
 
     <style>
         :root { --primary: #004a99; --secondary: #00aaff; --accent: #ffc107; --dark: #121212; }
-        body { font-family: 'Poppins', sans-serif; background-color: #ffffff; color: #333; }
+        body { font-family: 'Poppins', sans-serif; background-color: #f8f9fa; color: #333; overflow-x: hidden; }
         
-        /* Navbar */
-        .navbar { transition: 0.3s; padding: 12px 0; background: white !important; }
+        .navbar { transition: 0.3s; padding: 10px 0; background: white !important; }
         .navbar-brand img { height: 45px; }
 
-        /* Hero Section - Anti Tabrakan */
         .hero { 
-            background: linear-gradient(rgba(0, 74, 153, 0.7), rgba(0, 0, 0, 0.75)), url('hero.jpg');
+            background: linear-gradient(rgba(0, 74, 153, 0.75), rgba(0, 0, 0, 0.8)), url('hero.jpg');
             background-size: cover; background-position: center top;
-            min-height: 85vh; display: flex; align-items: center; color: white;
-            padding-top: 100px; /* Jarak agar tidak tabrakan dengan logo */
-            text-align: center;
+            min-height: 80vh; display: flex; align-items: center; color: white;
+            padding-top: 100px; text-align: center;
         }
 
-        /* Card Service Pro */
         .card-service {
-            border: none; border-radius: 20px; padding: 25px;
-            background: #f8f9fa; transition: 0.4s; height: 100%;
-            border-bottom: 4px solid transparent;
+            border: none; border-radius: 20px; padding: 30px;
+            background: white; transition: 0.4s; height: 100%;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            display: flex; flex-direction: column; align-items: center; text-align: center;
         }
         .card-service:hover {
-            transform: translateY(-10px); background: white;
-            box-shadow: 0 15px 35px rgba(0,74,153,0.1);
-            border-bottom: 4px solid var(--primary);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,74,153,0.15);
+            background: var(--primary); color: white;
         }
-        .card-service i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; display: block; }
+        .card-service i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; transition: 0.3s; }
+        .card-service:hover i { color: white; transform: scale(1.1); }
 
-        /* Gallery Wrapper */
-        .gallery-box { border-radius: 15px; overflow: hidden; position: relative; height: 250px; margin-bottom: 20px; }
+        .review-card { background: white; border-radius: 15px; padding: 20px; border-left: 5px solid var(--accent); height: 100%; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .stars { color: var(--accent); font-size: 0.85rem; }
+
+        .gallery-box { border-radius: 15px; overflow: hidden; height: 200px; position: relative; cursor: pointer; }
         .gallery-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
         .gallery-box:hover img { transform: scale(1.1); }
-        .gallery-label { 
-            position: absolute; bottom: 0; left: 0; right: 0; 
-            background: rgba(0, 74, 153, 0.85); color: white; 
-            padding: 8px; text-align: center; font-size: 0.85rem; font-weight: 600;
-        }
+        .gallery-label { position: absolute; bottom: 0; width: 100%; background: rgba(0,74,153,0.8); color: white; padding: 5px; font-size: 0.75rem; text-align: center; }
 
-        /* Testimonial Card */
-        .testi-card { background: white; border-radius: 15px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); height: 100%; }
-        .stars { color: var(--accent); margin-bottom: 10px; }
-
-        /* Notification Toast */
         #notif-toast {
-            position: fixed; bottom: 25px; left: 20px; background: white; 
-            padding: 12px 20px; border-radius: 50px; box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            position: fixed; bottom: 30px; left: 20px; background: white; 
+            padding: 12px 20px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             z-index: 9999; display: flex; align-items: center; gap: 12px;
             transform: translateX(-150%); transition: 0.5s ease-in-out;
         }
         #notif-toast.show { transform: translateX(0); }
 
-        /* Responsive Mobile */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero { min-height: 70vh; padding-top: 120px; }
-            .wa-float { width: 50px; height: 50px; font-size: 25px; bottom: 20px; right: 20px; }
-        }
-
         .wa-float {
             position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white;
             width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center;
             justify-content: center; font-size: 32px; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            text-decoration: none; transition: 0.3s;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.1rem; }
+            .card-service { padding: 20px; }
         }
     </style>
 </head>
@@ -82,33 +71,31 @@
 
     <div id="notif-toast">
         <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;">
-            <i class="bi bi-person-fill"></i>
+            <i class="bi bi-bell-fill"></i>
         </div>
         <div class="small">
-            <span id="notif-name" class="fw-bold"></span> baru saja mendaftar di <span id="notif-service" class="text-primary fw-bold"></span>
+            <span id="notif-msg"></span>
         </div>
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="logo.png" alt="Alita Logo">
+                <img src="logo.png" alt="Logo">
                 <span class="ms-2 fw-bold text-primary d-none d-sm-inline">ALITA MEDICAL CENTER</span>
             </a>
-            <a href="https://wa.me/6282229809228" class="btn btn-primary rounded-pill px-4 btn-sm fw-bold">DAFTAR ONLINE</a>
+            <a href="https://wa.me/6282229809228" class="btn btn-primary rounded-pill px-4 btn-sm fw-bold shadow">DAFTAR ONLINE</a>
         </div>
     </nav>
 
     <header class="hero">
         <div class="container animate__animated animate__fadeIn">
-            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill mb-3 fw-bold shadow-sm">
-                <i class="bi bi-shield-check me-1"></i> FASILITAS KESEHATAN TERPERCAYA
-            </span>
-            <h1 class="display-3 fw-bold mb-3">Solusi Sehat Untuk <br><span class="text-info">Keluarga Anda</span></h1>
-            <p class="lead mb-4 mx-auto" style="max-width: 700px;">Kami hadir memberikan layanan medis profesional, cepat, dan ramah untuk masyarakat Balongbendo dan sekitarnya.</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="#layanan" class="btn btn-primary btn-lg px-4 rounded-pill shadow">Cek Layanan</a>
-                <a href="#fasilitas" class="btn btn-outline-light btn-lg px-4 rounded-pill">Lihat Fasilitas</a>
+            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill mb-3 fw-bold shadow">FASILITAS KESEHATAN TERPERCAYA</span>
+            <h1 class="display-4 fw-bold mb-3">Solusi Sehat Untuk <br><span class="text-info">Keluarga Anda</span></h1>
+            <p class="lead mb-4 mx-auto" style="max-width: 650px;">Layanan medis profesional dengan sentuhan kasih sayang. Kepuasan Anda adalah prioritas utama kami.</p>
+            <div class="d-flex justify-content-center gap-2">
+                <a href="#layanan" class="btn btn-primary px-4 rounded-pill shadow">Cek Layanan</a>
+                <a href="#fasilitas" class="btn btn-outline-light px-4 rounded-pill">Galeri Foto</a>
             </div>
         </div>
     </header>
@@ -116,208 +103,102 @@
     <section id="layanan" class="py-5">
         <div class="container py-4">
             <div class="text-center mb-5">
-                <h6 class="text-primary fw-bold text-uppercase tracking-widest">Our Specialties</h6>
-                <h2 class="fw-bold display-6">Layanan Kesehatan Utama</h2>
+                <h2 class="fw-bold">Layanan Kesehatan Lengkap</h2>
                 <div class="mx-auto bg-primary mt-2" style="height: 4px; width: 60px; border-radius: 10px;"></div>
             </div>
             
             <div class="row g-4">
-                <div class="col-lg-3 col-md-6">
-                    <div class="card-service text-center">
-                        <i class="bi bi-person-heart"></i>
-                        <h5 class="fw-bold">Poli Umum</h5>
-                        <p class="small text-muted">Konsultasi dokter umum, pemeriksaan kesehatan rutin, dan pengobatan primer.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card-service text-center">
-                        <i class="bi bi-capsule"></i> <h5 class="fw-bold">Poli Gigi</h5>
-                        <p class="small text-muted">Perawatan gigi, tambal, cabut, dan pembersihan karang gigi (scaling).</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card-service text-center">
-                        <i class="bi bi-gender-female"></i>
-                        <h5 class="fw-bold">KIA & KB</h5>
-                        <p class="small text-muted">Pemeriksaan kehamilan, imunisasi anak, dan konsultasi keluarga berencana.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card-service text-center">
-                        <i class="bi bi-droplet-fill"></i>
-                        <h5 class="fw-bold">Laboratorium</h5>
-                        <p class="small text-muted">Cek Gula Darah, Kolesterol, Asam Urat, dan pemeriksaan urin lengkap.</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-md-12">
-                    <div class="card-service">
-                        <div class="row align-items-center">
-                            <div class="col-md-2 text-center">
-                                <i class="bi bi-balloon-heart" style="font-size: 3.5rem;"></i>
-                            </div>
-                            <div class="col-md-10">
-                                <h5 class="fw-bold text-primary">Mom & Baby Care</h5>
-                                <p class="small text-muted mb-2">Layanan khusus kenyamanan ibu dan buah hati oleh tenaga ahli:</p>
-                                <div class="row g-2">
-                                    <div class="col-6 small"><i class="bi bi-check2 text-success me-1"></i> Baby Spa & Massage</div>
-                                    <div class="col-6 small"><i class="bi bi-check2 text-success me-1"></i> Baby Therapy</div>
-                                    <div class="col-6 small"><i class="bi bi-check2 text-success me-1"></i> Mom Massage</div>
-                                    <div class="col-6 small"><i class="bi bi-check2 text-success me-1"></i> Pijat Laktasi & Oksitosin</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="card-service text-center">
-                        <i class="bi bi-house-add"></i>
-                        <h5 class="fw-bold">Home Care</h5>
-                        <p class="small text-muted">Layanan kunjungan medis dan perawatan luka langsung di rumah Anda.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card-service text-center">
-                        <i class="bi bi-clipboard2-pulse"></i>
-                        <h5 class="fw-bold">MCU</h5>
-                        <p class="small text-muted">Medical Check-Up karyawan dan persyaratan kerja (Kolektif/Individu).</p>
-                    </div>
-                </div>
+                <div class="col-lg-3 col-md-6"><div class="card-service"><i class="bi bi-person-heart"></i><h5 class="fw-bold">Poli Umum</h5><p class="small opacity-75">Konsultasi dokter & pemeriksaan rutin.</p></div></div>
+                <div class="col-lg-3 col-md-6"><div class="card-service"><i class="bi bi-capsule"></i><h5 class="fw-bold">Poli Gigi</h5><p class="small opacity-75">Scaling, tambal, dan perawatan gigi.</p></div></div>
+                <div class="col-lg-3 col-md-6"><div class="card-service"><i class="bi bi-gender-female"></i><h5 class="fw-bold">KIA & KB</h5><p class="small opacity-75">Imunisasi anak dan layanan KB.</p></div></div>
+                <div class="col-lg-3 col-md-6"><div class="card-service"><i class="bi bi-droplet-fill"></i><h5 class="fw-bold">Laboratorium</h5><p class="small opacity-75">Cek darah, kolesterol, dan gula darah.</p></div></div>
+                <div class="col-lg-3 col-md-6"><div class="card-service"><i class="bi bi-house-heart"></i><h5 class="fw-bold">Home Care</h5><p class="small opacity-75">Layanan medis di rumah Anda.</p></div></div>
+                <div class="col-lg-3 col-md-6"><div class="card-service"><i class="bi bi-clipboard2-pulse"></i><h5 class="fw-bold">MCU</h5><p class="small opacity-75">Check-up kesehatan kerja & umum.</p></div></div>
+                <div class="col-lg-3 col-md-6"><div class="card-service"><i class="bi bi-scissors"></i><h5 class="fw-bold">Khitan Modern</h5><p class="small opacity-75">Metode terbaru minim nyeri.</p></div></div>
+                <div class="col-lg-3 col-md-6"><div class="card-service"><i class="bi bi-balloon-heart"></i><h5 class="fw-bold">Mom & Baby Care</h5><p class="small opacity-75">Spa, massage, dan laktasi.</p></div></div>
             </div>
         </div>
     </section>
 
-    <section id="fasilitas" class="py-5 bg-light">
+    <section id="fasilitas" class="py-5 bg-white">
+        <div class="container py-4 text-center">
+            <h3 class="fw-bold mb-5">Galeri Fasilitas & Layanan</h3>
+            <div class="row g-3">
+                <div class="col-md-3 col-6"><div class="gallery-box shadow-sm"><img src="mombaby1.jpg"><div class="gallery-label">Mom & Baby Care</div></div></div>
+                <div class="col-md-3 col-6"><div class="gallery-box shadow-sm"><img src="khitan1.jpg"><div class="gallery-label">Khitan Modern</div></div></div>
+                <div class="col-md-3 col-6"><div class="gallery-box shadow-sm"><img src="lab.jpg"><div class="gallery-label">Laboratorium</div></div></div>
+                <div class="col-md-3 col-6"><div class="gallery-box shadow-sm"><img src="depan.jpg"><div class="gallery-label">Gedung Klinik</div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="fw-bold">Fasilitas & Dokumentasi</h2>
-                <p class="text-muted">Lingkungan bersih dan modern untuk kenyamanan pasien.</p>
+                <h3 class="fw-bold">Ulasan Pasien (Rating 4.9)</h3>
+                <div class="stars fs-4"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
             </div>
-            <div class="row g-3">
-                <div class="col-md-4 col-6">
-                    <div class="gallery-box">
-                        <img src="depan.jpg">
-                        <div class="gallery-label">Gedung Klinik</div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-6">
-                    <div class="gallery-box">
-                        <img src="pendafaran.jpg">
-                        <div class="gallery-label">Pendaftaran & Administrasi</div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-6">
-                    <div class="gallery-box">
-                        <img src="poli%20umum.jpg">
-                        <div class="gallery-label">Poli Umum</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="gallery-box">
-                        <img src="dental.jpg">
-                        <div class="gallery-label">Poli Gigi</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="gallery-box">
-                        <img src="lab.jpg">
-                        <div class="gallery-label">Laboratorium</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="gallery-box">
-                        <img src="farmasi.jpg">
-                        <div class="gallery-label">Instalasi Farmasi</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="gallery-box">
-                        <img src="ugd.jpg">
-                        <div class="gallery-label">UGD & Emergensi</div>
-                    </div>
-                </div>
+            <div class="row g-4 text-start">
+                <div class="col-md-4"><div class="review-card"><p class="small italic">"Sangat puas dengan layanan Mom & Baby Spa. Terapis ramah dan anak saya tenang."</p><h6 class="fw-bold small mb-0">- Ibu Maya</h6></div></div>
+                <div class="col-md-4"><div class="review-card"><p class="small italic">"Khitan profesional, anak tidak takut dan sembuh cepat. Recommended!"</p><h6 class="fw-bold small mb-0">- Bpk. Hendra</h6></div></div>
+                <div class="col-md-4"><div class="review-card"><p class="small italic">"Daftar online via WA sangat memudahkan. Tidak perlu antri lama."</p><h6 class="fw-bold small mb-0">- Ibu Siti</h6></div></div>
             </div>
-        </div>
-    </section>
-
-    <section class="py-5 bg-white">
-        <div class="container py-4">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Apa Kata Pasien Kami?</h2>
-                <p class="text-muted">Ulasan asli dari pasien yang telah merasakan layanan Alita Medical Center.</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="testi-card">
-                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                        <p class="small italic">"Pelayanan sangat ramah dan cepat. Perawatnya sabar, dokternya juga komunikatif. Tempatnya bersih banget."</p>
-                        <h6 class="fw-bold mb-0">Rina - <span class="text-muted small">Google Review</span></h6>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="testi-card">
-                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                        <p class="small italic">"Baby spa di sini mantap. Anak saya yang biasanya rewel jadi tenang dipijat sama terapisnya. Recommended buat ibu-ibu!"</p>
-                        <h6 class="fw-bold mb-0">Ibu Siti - <span class="text-muted small">Google Review</span></h6>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="testi-card">
-                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                        <p class="small italic">"Cek laborat hasilnya cepat keluar dan harganya terjangkau. Pendaftaran onlinenya juga memudahkan banget."</p>
-                        <h6 class="fw-bold mb-0">Bpk. Anton - <span class="text-muted small">Google Review</span></h6>
-                    </div>
-                </div>
+            <div class="text-center mt-4">
+                <a href="https://maps.app.goo.gl/ChIJM6m4rD4JeC4RE5Itv_ZFgwM" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">Lihat di Google Maps</a>
             </div>
         </div>
     </section>
 
     <footer class="bg-dark text-white py-5">
-        <div class="container">
-            <div class="row g-4 mb-4">
-                <div class="col-lg-6">
-                    <img src="logo.png" height="50" class="mb-3 bg-white p-1 rounded">
-                    <h4 class="fw-bold">Alita Medical Center</h4>
-                    <p class="small text-secondary">Jl. Raya Balongbendo No 17, Kec. Balongbendo, Sidoarjo.<br>Minggu & Hari Besar TETAP BUKA: 07.00 - 21.00 WIB</p>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <p class="fw-bold mb-2">Hubungi Kami:</p>
-                    <h3 class="text-info fw-bold">0822 2980 9228</h3>
-                    <div class="d-flex gap-3 justify-content-lg-end mt-3">
-                        <a href="#" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+        <div class="container text-center text-md-start">
+            <div class="row g-4">
+                <div class="col-lg-5">
+                    <img src="logo.png" height="55" class="mb-3 bg-white p-1 rounded">
+                    <h4 class="fw-bold">Klinik Alita Medika</h4>
+                    <p class="small text-secondary">Jl. Raya Balongbendo No 17, Sidoarjo.<br>Buka Setiap Hari: 07.00 - 21.00 WIB</p>
+                    <div class="d-flex gap-4 justify-content-center justify-content-md-start mt-4">
+                        <a href="https://www.instagram.com/klinikalitamedika2023" target="_blank" class="text-white fs-3"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@klinik.alita.medika" target="_blank" class="text-white fs-3"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://www.facebook.com/klinik.alita.medika.real" target="_blank" class="text-white fs-3"><i class="bi bi-facebook"></i></a>
                     </div>
                 </div>
+                <div class="col-lg-7 text-lg-end">
+                    <p class="mb-2">Info & Pendaftaran (WA):</p>
+                    <h2 class="text-info fw-bold mb-4">0822 2980 9228</h2>
+                    <p class="small text-secondary mt-5">© 2026 <strong>Medical Center Pro</strong>. Powered by Alita Medika Digital.</p>
+                </div>
             </div>
-            <hr class="border-secondary">
-            <p class="text-center small text-secondary mb-0">© 2026 Medical Center Pro Digital Solution. Managed by Munir Digital Center.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/6282229809228?text=Halo%20Alita%20Medical%20Center,%20saya%20ingin%20info%20pendaftaran..." class="wa-float shadow-lg">
-        <i class="bi bi-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/6282229809228" class="wa-float shadow-lg"><i class="bi bi-whatsapp"></i></a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Real-time Notification Logic
-        const names = ["Ibu Maya", "Bpk. Hendra", "Ananda Galih", "Ibu Sri", "Bpk. Wahyu", "Ibu Fitri", "Ananda Sarah"];
-        const services = ["Poli Umum", "Mom & Baby Spa", "Poli Gigi", "Cek Lab", "Poli KIA", "Pijat Laktasi", "Home Care"];
-
+        const femaleNames = ["Ibu Rina", "Ibu Siti", "Ibu Maya", "Ibu Diana"];
+        const maleNames = ["Bpk. Ahmad", "Bpk. Budi", "Bpk. Yusuf", "Ananda Rizky"];
+        const general = ["Poli Umum", "Poli Gigi", "Cek Laborat"];
+        
         function triggerNotif() {
             const toast = document.getElementById('notif-toast');
-            document.getElementById('notif-name').innerText = names[Math.floor(Math.random() * names.length)];
-            document.getElementById('notif-service').innerText = services[Math.floor(Math.random() * services.length)];
-            
+            const isFemale = Math.random() < 0.5;
+            let name, service;
+
+            if (isFemale) {
+                name = femaleNames[Math.floor(Math.random() * femaleNames.length)];
+                const services = [...general, "Mom & Baby Care", "Poli KIA"];
+                service = services[Math.floor(Math.random() * services.length)];
+            } else {
+                name = maleNames[Math.floor(Math.random() * maleNames.length)];
+                const services = [...general, "Khitan Modern"];
+                service = services[Math.floor(Math.random() * services.length)];
+            }
+
+            document.getElementById('notif-msg').innerHTML = `<b>${name}</b> baru saja mendaftar di <b>${service}</b>`;
             toast.classList.add('show');
             setTimeout(() => { toast.classList.remove('show'); }, 4000);
         }
-
-        setTimeout(() => {
-            triggerNotif();
-            setInterval(triggerNotif, 15000);
-        }, 5000);
+        setTimeout(() => { triggerNotif(); setInterval(triggerNotif, 18000); }, 3000);
     </script>
 </body>
 </html>
