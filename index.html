@@ -11,10 +11,16 @@
     <style>
         :root { --primary: #0056b3; --secondary: #00aaff; }
         body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        
+        /* FIX: Mengubah posisi background hero menempel ke ATAS (top) */
         .hero { 
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero.jpg');
-            background-size: cover; background-position: center; color: white; padding: 120px 0;
+            background-size: cover; 
+            background-position: center top; /* Ini perbaikannya */
+            color: white; 
+            padding: 120px 0;
         }
+        
         .card-service { border: none; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 15px; text-align: center; }
         .card-service:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
         .gallery-img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; }
@@ -63,7 +69,7 @@
 
     <section class="bg-light py-5">
         <div class="container">
-            <h2 class="fw-bold text-center mb-5 text-primary">Fasilitas & Layanan</h2>
+            <h2 class="fw-bold text-center mb-5 text-primary">Fasilitas & Layanan Kami</h2>
             <div class="row g-3">
                 <div class="col-md-4 col-6">
                     <img src="depan.jpg" class="gallery-img shadow" title="Tampak Depan">
@@ -82,8 +88,16 @@
                     <p class="text-center mt-2 small fw-bold">Poli Gigi</p>
                 </div>
                 <div class="col-md-4 col-6">
+                    <img src="poli%20kia.jpg" class="gallery-img shadow" title="Poli KIA">
+                    <p class="text-center mt-2 small fw-bold">Poli KIA</p>
+                </div>
+                <div class="col-md-4 col-6">
                     <img src="lab.jpg" class="gallery-img shadow" title="Laboratorium">
                     <p class="text-center mt-2 small fw-bold">Laboratorium</p>
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="farmasi.jpg" class="gallery-img shadow" title="Farmasi">
+                    <p class="text-center mt-2 small fw-bold">Farmasi/Apotek</p>
                 </div>
                 <div class="col-md-4 col-6">
                     <img src="ugd.jpg" class="gallery-img shadow" title="UGD">
@@ -93,17 +107,17 @@
         </div>
     </section>
 
-    <footer class="py-5 bg-dark text-white text-center">
-        <div class="container">
+    <footer class="py-5 bg-dark text-white text-center gallery">
+        <div class="container gallery">
             <img src="logo.png" height="60" class="mb-3">
-            <h4 class="fw-bold">Alita Medical Center</h4>
+            <h4 class="fw-bold gallery">Alita Medical Center</h4>
             <p>Jl. Raya Balongbendo No 17, Sidoarjo</p>
             <p class="small">Buka Setiap Hari: 07.00 - 21.00 WIB</p>
-            <p class="mt-4 text-secondary small">Powered by Medical Center Pro</p>
+            <p class="mt-4 text-secondary small">© 2026 Powered by Medical Center Pro Digital Solution</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/6282229809228?text=Halo%20Admin%20Alita%20Medical%20Center..." class="wa-float shadow-lg">
+    <a href="https://wa.me/6282229809228?text=Halo%20Admin%20Alita%20Medical%20Center,%20saya%20ingin%20mendaftar%20periksa..." class="wa-float shadow-lg gallery">
         <i class="bi bi-whatsapp me-2"></i> Daftar Online
     </a>
 
