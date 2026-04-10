@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alita Medical Center - Balongbendo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        :root { --primary: #0056b3; --secondary: #00aaff; }
+        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero.jpg');
+            background-size: cover; background-position: center; color: white; padding: 120px 0;
+        }
+        .card-service { border: none; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 15px; text-align: center; }
+        .card-service:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .gallery-img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; }
+        .wa-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; z-index: 1000; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary d-flex align-items-center" href="#">
+                <img src="logo.png" height="45" class="me-2" alt="Logo"> ALITA MEDICAL CENTER
+            </a>
+            <a href="https://wa.me/6282229809228" class="btn btn-primary px-4 shadow-sm">Chat Admin</a>
+        </div>
+    </nav>
+
+    <header class="hero text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Alita Medical Center</h1>
+            <p class="lead mb-4 fs-4 text-warning fw-semibold">"Kepuasan Anda adalah Prioritas Kami"</p>
+        </div>
+    </header>
+
+    <section class="container py-5">
+        <div class="row g-4 text-center text-md-start">
+            <div class="col-md-5">
+                <div class="p-4 bg-primary text-white rounded-4 shadow-sm h-100">
+                    <h3 class="fw-bold mb-3">Visi</h3>
+                    <p>Terwujudnya Fasilitas Kesehatan Terpercaya Bagi Masyarakat Balongbendo dan Sekitarnya.</p>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="p-4 bg-light rounded-4 border shadow-sm h-100">
+                    <h3 class="fw-bold text-primary mb-3">Misi Kami</h3>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-check-circle-fill text-primary"></i> Pelayanan Kesehatan terjangkau</li>
+                        <li><i class="bi bi-check-circle-fill text-primary"></i> Pelayanan cepat, aman, dan Ramah</li>
+                        <li><i class="bi bi-check-circle-fill text-primary"></i> Peningkatan kompetensi SDM optimal</li>
+                        <li><i class="bi bi-check-circle-fill text-primary"></i> Kemitraan yang harmonis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5 text-primary">Fasilitas & Layanan</h2>
+            <div class="row g-3">
+                <div class="col-md-4 col-6">
+                    <img src="depan.jpg" class="gallery-img shadow" title="Tampak Depan">
+                    <p class="text-center mt-2 small fw-bold">Tampak Depan</p>
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="pendafaran.jpg" class="gallery-img shadow" title="Pendaftaran">
+                    <p class="text-center mt-2 small fw-bold">Pendaftaran</p>
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="poli%20umum.jpg" class="gallery-img shadow" title="Poli Umum">
+                    <p class="text-center mt-2 small fw-bold">Poli Umum</p>
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="dental.jpg" class="gallery-img shadow" title="Poli Gigi">
+                    <p class="text-center mt-2 small fw-bold">Poli Gigi</p>
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="lab.jpg" class="gallery-img shadow" title="Laboratorium">
+                    <p class="text-center mt-2 small fw-bold">Laboratorium</p>
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="ugd.jpg" class="gallery-img shadow" title="UGD">
+                    <p class="text-center mt-2 small fw-bold">UGD 24 Jam</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 bg-dark text-white text-center">
+        <div class="container">
+            <img src="logo.png" height="60" class="mb-3">
+            <h4 class="fw-bold">Alita Medical Center</h4>
+            <p>Jl. Raya Balongbendo No 17, Sidoarjo</p>
+            <p class="small">Buka Setiap Hari: 07.00 - 21.00 WIB</p>
+            <p class="mt-4 text-secondary small">Powered by Medical Center Pro</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/6282229809228?text=Halo%20Admin%20Alita%20Medical%20Center..." class="wa-float shadow-lg">
+        <i class="bi bi-whatsapp me-2"></i> Daftar Online
+    </a>
+
+</body>
+</html>
