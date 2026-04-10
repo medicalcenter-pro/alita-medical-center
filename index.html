@@ -17,7 +17,6 @@
         .navbar { background: white !important; border-bottom: 3px solid var(--primary); }
         .navbar-brand img { height: 45px; }
 
-        /* HERO FIX: Posisi background ke TOP agar wajah petugas terlihat */
         .hero { 
             background: linear-gradient(rgba(0, 74, 153, 0.75), rgba(0, 74, 153, 0.75)), url('hero.jpg');
             background-size: cover; background-position: center top; 
@@ -31,29 +30,40 @@
             margin-top: 15px; font-size: 0.9rem;
         }
 
-        /* Card Service */
+        /* Card Service with Description */
         .card-service {
             border: none; border-radius: 15px; padding: 25px;
             background: white; transition: 0.3s; height: 100%;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center;
         }
         .card-service:hover { transform: translateY(-5px); background: var(--primary); color: white !important; }
-        .card-service i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; display: block; }
-        .card-service:hover i { color: white !important; }
+        .card-service i { font-size: 2.2rem; color: var(--primary); margin-bottom: 15px; display: block; }
+        .card-service:hover i, .card-service:hover p, .card-service:hover h6 { color: white !important; }
 
-        /* Modal / Pop-Up Styling */
+        /* Modal / Pop-Up */
         .modal-content { border-radius: 20px; border: none; box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
         .modal-header { background: var(--primary); color: white; border-radius: 20px 20px 0 0; padding: 20px; }
         .form-control, .form-select { border-radius: 10px; padding: 10px; border: 1px solid #ddd; font-size: 0.85rem; }
 
-        /* Multi-Item Slide Gallery */
+        /* Gallery Multi-Item */
         .gallery-box { border-radius: 12px; overflow: hidden; height: 150px; position: relative; }
         .gallery-box img { width: 100%; height: 100%; object-fit: cover; }
         .gallery-label { position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.7); color: white; padding: 4px; font-size: 0.6rem; text-align: center; }
 
-        /* Review Card Multi-Item */
+        /* Review Card */
         .review-card { background: white; border-radius: 15px; padding: 20px; height: 100%; border-bottom: 4px solid var(--accent); box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; }
         .stars { color: var(--accent); font-size: 0.9rem; margin-bottom: 8px; }
+
+        /* Floating Info Bottom Right */
+        .floating-info {
+            position: fixed; bottom: 105px; right: 30px; 
+            background: #d9534f; color: white; padding: 8px 15px;
+            border-radius: 30px; font-size: 0.75rem; font-weight: 700;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 
         /* Floating Notif */
         #notif-toast {
@@ -72,7 +82,7 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
+            .hero h1 { font-size: 1.8rem; }
             .hero { background-position: center 20%; }
         }
     </style>
@@ -84,6 +94,10 @@
             <i class="bi bi-person-check-fill"></i>
         </div>
         <div class="small"><span id="notif-text"></span></div>
+    </div>
+
+    <div class="floating-info d-none d-md-block">
+        <i class="bi bi-calendar-check me-1"></i> Minggu & Hari Besar TETAP BUKA
     </div>
 
     <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
@@ -106,57 +120,55 @@
             <div class="op-hours">
                 <i class="bi bi-clock-fill me-2"></i> SETIAP HARI: 07.00 - 21.00 WIB
             </div>
-            <div class="mt-3">
-                <span class="text-white small fw-bold">★★★★★ 4.9 Rating Google Maps</span>
-            </div>
         </div>
     </header>
 
     <section class="container py-4">
-        <div class="bg-white p-4 rounded-4 shadow-sm border-start border-primary border-5 text-center" data-aos="fade-up">
-            <h6 class="fw-bold text-primary mb-3">Visi & Misi Klinik</h6>
-            <div class="row g-2 justify-content-center">
-                <div class="col-md-6 col-lg-3 small fw-bold">1. Layanan terjangkau</div>
-                <div class="col-md-6 col-lg-3 small fw-bold">2. Cepat, aman, & Ramah</div>
-                <div class="col-md-6 col-lg-3 small fw-bold">3. SDM optimal & ahli</div>
-                <div class="col-md-6 col-lg-3 small fw-bold">4. Kemitraan harmonis</div>
+        <div class="bg-white p-4 rounded-4 shadow-sm border-start border-primary border-5" data-aos="fade-up">
+            <h6 class="fw-bold text-primary mb-2">VISI KAMI:</h6>
+            <p class="small text-muted mb-4">"Terwujudnya Fasilitas Kesehatan Terpercaya Bagi Masyarakat Balongbendo dan Sekitarnya."</p>
+            <div class="row g-2">
+                <div class="col-md-6 col-lg-3 small fw-bold text-primary"><i class="bi bi-check-lg"></i> Layanan Terjangkau</div>
+                <div class="col-md-6 col-lg-3 small fw-bold text-primary"><i class="bi bi-check-lg"></i> Cepat, Aman, & Ramah</div>
+                <div class="col-md-6 col-lg-3 small fw-bold text-primary"><i class="bi bi-check-lg"></i> SDM Optimal & Ahli</div>
+                <div class="col-md-6 col-lg-3 small fw-bold text-primary"><i class="bi bi-check-lg"></i> Kemitraan Harmonis</div>
             </div>
         </div>
     </section>
 
     <section class="bg-white py-5">
-        <div class="container text-center">
-            <h5 class="fw-bold mb-5 text-primary">LAYANAN KESEHATAN</h5>
+        <div class="container">
+            <h5 class="fw-bold text-center mb-5 text-primary">JENIS LAYANAN KESEHATAN</h5>
             <div class="row g-3">
-                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-person-heart"></i><h6 class="fw-bold">Poli Umum</h6></div></div>
-                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-capsule"></i><h6 class="fw-bold">Poli Gigi</h6></div></div>
-                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-gender-female"></i><h6 class="fw-bold">Poli KIA/KB</h6></div></div>
-                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-droplet-fill"></i><h6 class="fw-bold">Laboratorium</h6></div></div>
-                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-scissors"></i><h6 class="fw-bold">Khitan</h6></div></div>
-                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-balloon-heart"></i><h6 class="fw-bold">Mom & Baby</h6></div></div>
-                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-house-add"></i><h6 class="fw-bold">Home Care</h6></div></div>
-                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-clipboard2-pulse"></i><h6 class="fw-bold">MCU</h6></div></div>
+                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-person-heart"></i><h6 class="fw-bold">Poli Umum</h6><p style="font-size: 0.7rem;" class="text-muted">Konsultasi dokter & pengobatan rutin.</p></div></div>
+                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-capsule"></i><h6 class="fw-bold">Poli Gigi</h6><p style="font-size: 0.7rem;" class="text-muted">Scaling, tambal & perawatan gigi.</p></div></div>
+                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-gender-female"></i><h6 class="fw-bold">Poli KIA/KB</h6><p style="font-size: 0.7rem;" class="text-muted">Kesehatan ibu, imunisasi & KB.</p></div></div>
+                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-droplet-fill"></i><h6 class="fw-bold">Laboratorium</h6><p style="font-size: 0.7rem;" class="text-muted">Cek darah, kolesterol & gula darah.</p></div></div>
+                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-scissors"></i><h6 class="fw-bold">Khitan</h6><p style="font-size: 0.7rem;" class="text-muted">Metode modern minim rasa sakit.</p></div></div>
+                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-balloon-heart"></i><h6 class="fw-bold">Mom & Baby</h6><p style="font-size: 0.7rem;" class="text-muted">Spa bayi & pijat ibu laktasi.</p></div></div>
+                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-house-add"></i><h6 class="fw-bold">Home Care</h6><p style="font-size: 0.7rem;" class="text-muted">Layanan medis langsung di rumah.</p></div></div>
+                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-clipboard2-pulse"></i><h6 class="fw-bold">MCU</h6><p style="font-size: 0.7rem;" class="text-muted">Check-up kesehatan kerja & umum.</p></div></div>
             </div>
         </div>
     </section>
 
     <section class="container py-5">
-        <h5 class="fw-bold text-center mb-4">Fasilitas Kami</h5>
+        <h5 class="fw-bold text-center mb-4">Galeri Fasilitas</h5>
         <div id="gallerySlide" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="row g-2">
                         <div class="col-3"><div class="gallery-box"><img src="depan.jpg"><div class="gallery-label">Fasad</div></div></div>
-                        <div class="col-3"><div class="gallery-box"><img src="khitan1.jpg.png"><div class="gallery-label">Khitan 1</div></div></div>
-                        <div class="col-3"><div class="gallery-box"><img src="mombaby1.jpg.jpg"><div class="gallery-label">Mom & Baby 1</div></div></div>
+                        <div class="col-3"><div class="gallery-box"><img src="khitan1.jpg.png"><div class="gallery-label">Khitan</div></div></div>
+                        <div class="col-3"><div class="gallery-box"><img src="mombaby1.jpg.jpg"><div class="gallery-label">Mom & Baby</div></div></div>
                         <div class="col-3"><div class="gallery-box"><img src="lab.jpg"><div class="gallery-label">Lab</div></div></div>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="row g-2">
                         <div class="col-3"><div class="gallery-box"><img src="khitan2.jpg.png"><div class="gallery-label">Khitan 2</div></div></div>
-                        <div class="col-3"><div class="gallery-box"><img src="mombaby2.jpg.jpg"><div class="gallery-label">Mom & Baby 2</div></div></div>
-                        <div class="col-3"><div class="gallery-box"><img src="mombaby3.jpg.jpg"><div class="gallery-label">Mom & Baby 3</div></div></div>
+                        <div class="col-3"><div class="gallery-box"><img src="mombaby2.jpg.jpg"><div class="gallery-label">Baby Spa</div></div></div>
+                        <div class="col-3"><div class="gallery-box"><img src="mombaby3.jpg.jpg"><div class="gallery-label">Therapy</div></div></div>
                         <div class="col-3"><div class="gallery-box"><img src="hero.jpg"><div class="gallery-label">Interior</div></div></div>
                     </div>
                 </div>
@@ -176,13 +188,6 @@
                             <div class="col-md-4 d-none d-md-block"><div class="review-card small"><div class="stars">★★★★★</div>"Pendaftaran online sangat membantu."<br><b>- Ibu Siti</b></div></div>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="row g-3">
-                            <div class="col-md-4"><div class="review-card small"><div class="stars">★★★★★</div>"Tempatnya sangat bersih dan nyaman."<br><b>- Bpk. Yusuf</b></div></div>
-                            <div class="col-md-4 d-none d-md-block"><div class="review-card small"><div class="stars">★★★★★</div>"Baby spa recomended banget untuk bayi."<br><b>- Ibu Diana</b></div></div>
-                            <div class="col-md-4 d-none d-md-block"><div class="review-card small"><div class="stars">★★★★★</div>"Cek lab hasilnya cepat dan akurat."<br><b>- Bpk. Anton</b></div></div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -193,7 +198,7 @@
             <div class="row g-4">
                 <div class="col-lg-6">
                     <img src="logo.png" height="40" class="mb-3 bg-white p-1 rounded">
-                    <p class="small text-secondary">Jl. Raya Balongbendo No 17, Sidoarjo.<br>Setiap Hari: 07.00 - 21.00 WIB</p>
+                    <p class="small text-secondary">Jl. Raya Balongbendo No 17, Sidoarjo.<br>Minggu & Hari Besar TETAP BUKA.</p>
                     <div class="d-flex justify-content-center justify-content-md-start gap-4 fs-5 mt-2">
                         <a href="https://instagram.com/klinikalitamedika2023" target="_blank" class="text-white"><i class="bi bi-instagram"></i></a>
                         <a href="https://tiktok.com/@klinik.alita.medika" target="_blank" class="text-white"><i class="bi bi-tiktok"></i></a>
