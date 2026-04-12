@@ -14,21 +14,21 @@
         :root { --primary: #004a99; --secondary: #00aaff; --accent: #ffc107; --dark: #0f172a; --danger: #ef4444; }
         body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; color: #334155; overflow-x: hidden; }
         
-        /* Navbar Master */
+        /* Navbar */
         .navbar { background: white !important; border-bottom: 3px solid var(--primary); padding: 12px 0; }
         .navbar-brand img { height: 65px; }
         .clinic-name-brand { font-size: 1.6rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; line-height: 1; }
         .logo-paripurna-header { height: 85px; width: auto; }
 
-        /* Hero - Posisi Master ACC */
+        /* Hero */
         .hero { 
             background: linear-gradient(rgba(0, 74, 153, 0.75), rgba(0, 74, 153, 0.75)), url('hero.jpg');
-            background-size: cover; background-position: center; 
+            background-size: cover; background-position: center top; 
             min-height: 55vh; display: flex; align-items: center; color: white;
-            text-align: center; padding: 100px 0;
+            text-align: center; padding: 130px 0 130px;
         }
 
-        /* Schedule Box Master */
+        /* Smart Schedule */
         .schedule-box {
             background: white; border-radius: 20px; padding: 30px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.1); margin-top: -100px;
@@ -38,7 +38,11 @@
         @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
 
         /* Layanan */
-        .card-service { border: none; border-radius: 15px; padding: 25px; background: white; transition: 0.3s; height: 100%; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; }
+        .card-service {
+            border: none; border-radius: 15px; padding: 25px;
+            background: white; transition: 0.3s; height: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center;
+        }
         .card-service:hover { transform: translateY(-8px); background: var(--primary); color: white !important; }
         .card-service i { font-size: 2.5rem; color: var(--primary); margin-bottom: 12px; display: block; }
         .card-service:hover i, .card-service:hover p, .card-service:hover h6 { color: white !important; }
@@ -48,49 +52,42 @@
         .gallery-box img { width: 100%; height: 100%; object-fit: cover; }
         .gallery-label { position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.7); color: white; padding: 5px; font-size: 0.65rem; text-align: center; }
 
-        /* Review */
+        /* Review FIX: Multi Slide */
         .google-card { background: white; border-radius: 15px; padding: 25px; height: 100%; border-bottom: 5px solid #4285F4; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 15px; }
         .stars { color: var(--accent); font-size: 0.9rem; margin-bottom: 8px; }
 
-        /* Footer Master */
+        /* Footer */
         footer { background: var(--dark); color: #94a3b8; padding: 80px 0 40px; }
         .footer-title { color: white; font-weight: 700; margin-bottom: 25px; font-size: 1.1rem; }
         .contact-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 15px; font-size: 0.9rem; }
         .contact-item i { color: var(--secondary); font-size: 1.2rem; }
 
-        /* Floating Action */
+        /* Floating Action Center */
         .action-center { position: fixed; bottom: 30px; right: 30px; z-index: 1000; display: flex; align-items: center; gap: 12px; }
         .action-labels { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; }
-        .label-pill { background: rgba(0, 74, 153, 0.9); color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.65rem; font-weight: 700; box-shadow: 0 4px 12px rgba(0,0,0,0.15); white-space: nowrap; }
-        .pill-danger { background: rgba(239, 68, 68, 0.9) !important; }
-        
-        .btn-wa-main { 
-            width: 65px; height: 65px; background: #25d366; color: white; 
-            border-radius: 50%; display: flex; align-items: center; 
-            justify-content: center; font-size: 32px; border: none; 
-            box-shadow: 0 15px 30px rgba(37,211,102,0.3); cursor: pointer; 
+        .label-pill { 
+            background: rgba(0, 74, 153, 0.9); color: white; padding: 5px 12px; 
+            border-radius: 20px; font-size: 0.65rem; font-weight: 700; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); white-space: nowrap;
         }
-
-        /* Notify */
-        #notify-toast { position: fixed; bottom: 30px; left: 30px; background: white; padding: 12px 20px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-left: 5px solid #25d366; display: none; z-index: 999; }
+        .pill-danger { background: rgba(239, 68, 68, 0.9) !important; }
+        .btn-wa-main {
+            width: 65px; height: 65px; background: #25d366; color: white;
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-size: 35px; border: none;
+            box-shadow: 0 15px 30px rgba(37,211,102,0.3); cursor: pointer;
+        }
 
         @media (max-width: 768px) {
             .navbar-brand img { height: 45px; }
             .clinic-name-brand { font-size: 1rem; }
             .logo-paripurna-header { height: 55px; }
-            .hero { min-height: 50vh; padding: 80px 0; }
+            .hero { padding: 110px 0 100px; }
             .label-pill { display: none; }
         }
     </style>
 </head>
 <body>
-
-    <div id="notify-toast">
-        <div class="d-flex align-items-center gap-3">
-            <i class="bi bi-check-circle-fill text-success fs-4"></i>
-            <div><div id="notif-text" class="small fw-bold"></div><div class="text-muted" style="font-size: 0.6rem;">Baru saja mendaftar online</div></div>
-        </div>
-    </div>
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container d-flex justify-content-between align-items-center">
@@ -98,7 +95,9 @@
                 <img src="logo.png" alt="Logo">
                 <span class="ms-3 clinic-name-brand">ALITA MEDICAL CENTER</span>
             </a>
-            <img src="logoaskinparipurna.png" alt="Paripurna ASKIN" class="logo-paripurna-header">
+            <div>
+                <img src="logoaskinparipurna.png" alt="Paripurna ASKIN" class="logo-paripurna-header">
+            </div>
         </div>
     </nav>
 
@@ -112,6 +111,10 @@
 
     <section class="container">
         <div class="schedule-box" data-aos="fade-up">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="fw-bold text-primary mb-0"><i class="bi bi-calendar3-event me-3"></i>JADWAL DOKTER <span id="day-text">HARI INI</span></h5>
+                <div class="fw-bold text-danger"><span class="live-dot"></span>LIVE UPDATE</div>
+            </div>
             <div id="schedule-content" class="row g-3 text-center"></div>
         </div>
     </section>
@@ -126,22 +129,55 @@
                 <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-droplet"></i><h6 class="fw-bold small">Laboratorium</h6><p class="small text-muted mb-0">Cek darah lengkap.</p></div></div>
                 <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-scissors"></i><h6 class="fw-bold small">Khitan</h6><p class="small text-muted mb-0">Metode modern minim nyeri.</p></div></div>
                 <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-balloon-heart"></i><h6 class="fw-bold small">Mom & Baby</h6><p class="small text-muted mb-0">Spa bayi & laktasi.</p></div></div>
-                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-house-add"></i><h6 class="fw-bold small">Home Care</h6><p class="small text-muted mb-0">Layanan medis di rumah.</p></div></div>
-                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-clipboard2-pulse"></i><h6 class="fw-bold small">MCU</h6><p class="small text-muted mb-0">Cek kesehatan kerja.</p></div></div>
+                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-house"></i><h6 class="fw-bold small">Home Care</h6><p class="small text-muted mb-0">Layanan medis di rumah.</p></div></div>
+                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-clipboard-pulse"></i><h6 class="fw-bold small">MCU</h6><p class="small text-muted mb-0">Cek kesehatan kerja.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <h4 class="fw-bold text-center mb-5 text-primary text-uppercase">Galeri Fasilitas</h4>
+        <div id="gallerySlide" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row g-2">
+                        <div class="col-3"><div class="gallery-box"><img src="depan.jpg"><div class="gallery-label">Fasad Utama</div></div></div>
+                        <div class="col-3"><div class="gallery-box"><img src="khitan1.jpg.png"><div class="gallery-label">Khitan</div></div></div>
+                        <div class="col-3"><div class="gallery-box"><img src="mombaby1.jpg.jpg"><div class="gallery-label">Mom & Baby</div></div></div>
+                        <div class="col-3"><div class="gallery-box"><img src="lab.jpg"><div class="gallery-label">Lab</div></div></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row g-2">
+                        <div class="col-3"><div class="gallery-box"><img src="senamprolanis.jpeg"><div class="gallery-label">Prolanis</div></div></div>
+                        <div class="col-3"><div class="gallery-box"><img src="penyuluhankesehatan.jpeg"><div class="gallery-label">Penyuluhan</div></div></div>
+                        <div class="col-3"><div class="gallery-box"><img src="pendaftaran.jpg"><div class="gallery-label">Pendaftaran</div></div></div>
+                        <div class="col-3"><div class="gallery-box"><img src="ugd.jpg"><div class="gallery-label">UGD 24 Jam</div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-5">
+        <div class="container text-center">
+            <h4 class="fw-bold mb-5 text-primary">ULASAN PASIEN GOOGLE MAPS (4.9 ★)</h4>
+            <div id="reviewSlide" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+                <div class="carousel-inner" id="review-container">
+                    </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container text-center text-lg-start">
+        <div class="container">
             <div class="row g-5">
                 <div class="col-lg-4">
                     <img src="logo.png" height="55" class="bg-white p-2 rounded mb-4 shadow">
                     <p class="small lh-lg">Layanan kesehatan primer terpercaya di Balongbendo, mengedepankan kualitas dan kenyamanan setiap pasien.</p>
-                    <div class="d-flex justify-content-center justify-content-lg-start gap-4 mt-4">
-                        <a href="https://instagram.com/klinikalitamedika2023" target="_blank" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
-                        <a href="https://tiktok.com/@klinik.alita.medika" target="_blank" class="text-white fs-4"><i class="bi bi-tiktok"></i></a>
-                        <a href="https://facebook.com/klinik.alita.medika.real" target="_blank" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+                    <div class="d-flex gap-4 mt-4">
+                        <a href="https://instagram.com/klinikalitamedika2023" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+                        <a href="https://facebook.com/klinik.alita.medika.real" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -155,72 +191,55 @@
                 </div>
                 <div class="col-lg-4">
                     <h6 class="footer-title">HOTLINE & KONTAK</h6>
-                    <div class="contact-item"><i class="bi bi-whatsapp"></i><div><h6 class="text-white mb-0 small">0822 2980 9228</h6><span class="text-muted" style="font-size: 0.7rem;">Pendaftaran Online</span></div></div>
+                    <div class="contact-item"><i class="bi bi-whatsapp"></i><div><h6 class="text-white mb-0 small">0822 2980 9228</h6><span class="text-muted" style="font-size: 0.7rem;">Hotline & Pendaftaran</span></div></div>
+                    <div class="contact-item"><i class="bi bi-envelope-fill"></i><div><span class="text-white small">alitamedika@gmail.com</span></div></div>
                     <div class="contact-item"><i class="bi bi-geo-alt-fill"></i><div><span class="text-white small">Jl. Raya Balongbendo No 17, Sidoarjo</span></div></div>
                 </div>
             </div>
+            <hr class="border-secondary mt-5 opacity-25">
+            <p class="text-center small mb-0 mt-4 opacity-50">© 2026 Alita Medical Center. Developed by Medical Center Pro.</p>
         </div>
     </footer>
 
     <div class="action-center">
         <div class="action-labels">
             <div class="label-pill pill-danger">MINGGU TETAP BUKA</div>
-            <div class="label-pill">PUSAT LAYANAN DIGITAL</div>
+            <div class="label-pill">DAFTAR ONLINE</div>
         </div>
-        <button class="btn-wa-main shadow-lg" data-bs-toggle="modal" data-bs-target="#modalHub"><i class="bi bi-headset"></i></button>
-    </div>
-
-    <div class="modal fade" id="modalHub" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0">
-                <div class="modal-header bg-primary text-white border-0"><h6 class="fw-bold mb-0">Pilih Layanan Bantuan</h6><button class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
-                <div class="modal-body p-3 text-center">
-                    <div class="list-group gap-2">
-                        <button class="list-group-item list-group-item-action rounded-3 border-0 bg-light p-3 text-start" data-bs-toggle="modal" data-bs-target="#modalDaftar"><i class="bi bi-pencil-square text-primary me-3"></i><b>Pendaftaran Online (Form)</b></button>
-                        <a href="https://maps.app.goo.gl/9Z7Z4wG9Z7Z4wG9Z7" target="_blank" class="list-group-item list-group-item-action rounded-3 border-0 bg-light p-3 text-start"><i class="bi bi-geo-alt text-danger me-3"></i><b>Lokasi Klinik (Google Maps)</b></a>
-                        <button class="list-group-item list-group-item-action rounded-3 border-0 bg-light p-3 text-start" data-bs-toggle="modal" data-bs-target="#modalJKN"><i class="bi bi-phone text-success me-3"></i><b>Cara Pindah Faskes (Mobile JKN)</b></button>
-                        <a href="https://wa.me/6282229809228" target="_blank" class="list-group-item list-group-item-action rounded-3 border-0 bg-light p-3 text-start"><i class="bi bi-chat-dots text-info me-3"></i><b>Chat Admin (Hotline)</b></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="modalJKN" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0">
-                <div class="modal-header bg-success text-white border-0"><h6 class="fw-bold mb-0">Panduan Pindah Faskes</h6><button class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
-                <div class="modal-body p-4 small">
-                    <ol class="lh-lg">
-                        <li>Buka Aplikasi <b>Mobile JKN</b>.</li>
-                        <li>Pilih Menu <b>Perubahan Data Peserta</b>.</li>
-                        <li>Pilih nama peserta yang akan dipindah.</li>
-                        <li>Klik pada <b>Fasilitas Kesehatan Tingkat Pertama</b>.</li>
-                        <li><b>Pilih Provinsi:</b> Jawa Timur.</li>
-                        <li><b>Pilih Kabupaten/Kota:</b> Sidoarjo.</li>
-                        <li>Cari dan Pilih: <b>Klinik Alita Medika</b>.</li>
-                        <li>Klik Simpan (Efektif per tanggal 1 bulan berikutnya).</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
+        <button class="btn-wa-main shadow-lg" data-bs-toggle="modal" data-bs-target="#modalDaftar"><i class="bi bi-whatsapp"></i></button>
     </div>
 
     <div class="modal fade" id="modalDaftar" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0">
-                <div class="modal-header bg-primary text-white p-4 border-0"><h5 class="modal-title fw-bold">Pendaftaran Online</h5><button class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+                <div class="modal-header border-0 bg-primary text-white p-4">
+                    <h5 class="modal-title fw-bold">Pendaftaran Online</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
                 <div class="modal-body p-4">
                     <form id="waForm">
                         <div class="row g-3">
-                            <div class="col-6"><label class="small fw-bold">Nama Pasien*</label><input type="text" id="nama" class="form-control" required></div>
-                            <div class="col-6"><label class="small fw-bold">NIK*</label><input type="number" id="nik" class="form-control" required></div>
-                            <div class="col-12"><label class="small fw-bold">Tanggal Lahir Pasien*</label><input type="date" id="tgl" class="form-control" required></div>
-                            <div class="col-12"><label class="small fw-bold">Pilih Layanan*</label><select id="poli" class="form-select" required><option value="">-- Pilih --</option><option>Poli Umum</option><option>Poli Gigi</option><option>Poli KIA/KB</option><option>Laboratorium</option><option>Khitan Modern</option><option>Mom & Baby Spa</option><option>Home Care</option><option>MCU</option></select></div>
-                            <div class="col-12"><label class="small fw-bold">Alamat*</label><input type="text" id="alamat" class="form-control" required></div>
-                            <div class="col-12"><label class="small fw-bold">Keluhan*</label><textarea id="keluhan" class="form-control" rows="2" required></textarea></div>
-                            <div class="col-12"><label class="small fw-bold text-danger">Alergi Obat*</label><input type="text" id="alergi" class="form-control" placeholder='Tulis "-" jika tidak ada' required></div>
-                            <button type="button" onclick="sendWA()" class="btn btn-success w-100 fw-bold rounded-pill p-3 mt-3 shadow">KIRIM KE WHATSAPP</button>
+                            <div class="col-6"><label class="small fw-bold">Nama Pasien</label><input type="text" id="nama" class="form-control" required></div>
+                            <div class="col-6"><label class="small fw-bold">NIK</label><input type="number" id="nik" class="form-control" required></div>
+                            
+                            <div class="col-12"><label class="small fw-bold">Tanggal Lahir Pasien</label><input type="date" id="tgl" class="form-control" required></div>
+                            
+                            <div class="col-12">
+                                <label class="small fw-bold">Pilih Layanan/Poli</label>
+                                <select id="poli" class="form-select" required>
+                                    <option value="">-- Pilih Layanan --</option>
+                                    <option>Poli Umum</option><option>Poli Gigi</option>
+                                    <option>Poli KIA/KB</option><option>Laboratorium</option>
+                                    <option>Khitan Modern</option><option>Mom & Baby Spa</option>
+                                    <option>Home Care</option><option>MCU</option>
+                                </select>
+                            </div>
+                            <div class="col-12"><label class="small fw-bold">Alamat Lengkap</label><input type="text" id="alamat" class="form-control" required></div>
+                            <div class="col-12"><label class="small fw-bold">Keluhan Utama</label><textarea id="keluhan" class="form-control" rows="2" required></textarea></div>
+                            
+                            <div class="col-12"><label class="small fw-bold text-danger">Alergi Obat (Tulis "-" Jika Tidak Ada)</label><input type="text" id="alergi" class="form-control" required></div>
+                            
+                            <button type="button" onclick="sendWA()" class="btn btn-success w-100 fw-bold rounded-pill p-3 mt-3">KIRIM KE WHATSAPP</button>
                         </div>
                     </form>
                 </div>
@@ -232,19 +251,8 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
-
-        // NOTIFY
-        const patients = ["Ibu Ratna", "Bpk. Hendra", "Ibu Siti", "Bpk. Yusuf", "Ibu Linda", "Bpk. Anton"];
-        function showN() {
-            const name = patients[Math.floor(Math.random() * patients.length)];
-            document.getElementById('notif-text').innerText = name;
-            const t = document.getElementById('notify-toast');
-            t.style.display = 'block';
-            setTimeout(() => { t.style.display = 'none'; }, 4000);
-        }
-        setInterval(showN, 8000);
-
-        // JADWAL
+        
+        // JADWAL DOKTER
         const schedules = {
             0: {"Poli Umum": ["dr. M Andika Ahsana (14.00-21.00)", "dr. Nisrina Alya (08.00-14.00)"]},
             1: {"Poli Umum": ["dr. Hafmi Ersya (08.00-14.00)", "dr. Dhita Mevia (14.00-20.00)"], "Poli Gigi": ["drg. Hafmi Salis (16.00-21.00)"]},
@@ -254,20 +262,56 @@
             5: {"Poli Umum": ["dr. Hafmi Ersya (08.00-14.00)", "dr. Dhita Mevia (14.00-21.00)"], "Poli Gigi": ["drg. Hafmi Salis (16.00-21.00)"]},
             6: {"Poli Umum": ["dr. Nisrina Alya (08.00-14.00)", "dr. M Andika Ahsana (14.00-21.00)"], "Poli Gigi": ["drg. Hafmi Salis (08.00-13.00)", "drg. Rizal Nandy (14.00-18.00)"]}
         };
+
         const today = new Date().getDay();
+        const days = ["MINGGU", "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU"];
+        document.getElementById('day-text').innerText = days[today];
         let schedHtml = "";
         for (let p in schedules[today]) {
-            schedHtml += `<div class="col-md-6"><div class="p-3 border rounded-4 bg-light shadow-sm"><div class="fw-bold text-primary small text-uppercase">${p}</div>`;
+            schedHtml += `<div class="col-md-6"><div class="p-3 border rounded-4 bg-light shadow-sm"><div class="fw-bold text-primary small">${p}</div>`;
             schedules[today][p].forEach(d => schedHtml += `<div class="small fw-bold mt-1" style="font-size: 0.75rem;">${d}</div>`);
             schedHtml += `</div></div>`;
         }
         document.getElementById('schedule-content').innerHTML = schedHtml;
 
+        // GENERATE REVIEWS (20 Items)
+        const reviews = [
+            {n: "Ibu Ratna S.", r: "Pelayanan sangat ramah, dokternya komunikatif."},
+            {n: "Bpk. Hendra", r: "Khitan modern di sini sangat oke, anak saya nyaman."},
+            {n: "Ibu Siti Z.", r: "Daftar lewat WA sangat simpel, gak perlu antre lama."},
+            {n: "Bpk. Yusuf A.", r: "Lab hasilnya cepat & akurat. Petugasnya sabar."},
+            {n: "Ibu Linda P.", r: "Baby spa recomended banget. Tempatnya bersih."},
+            {n: "Bpk. Anton", r: "Minggu tetap buka sangat membantu kalau darurat."},
+            {n: "Ibu Diana", r: "Poli Gigi peralatannya modern. Puas sekali."},
+            {n: "Bpk. Budi", r: "Respon pendaftaran online sangat cepat."},
+            {n: "Ibu Sari", r: "Bidan di KIA sangat telaten dan informatif."},
+            {n: "Bpk. Eko", r: "Tempat parkir luas dan ruang tunggu nyaman."},
+            {n: "Ibu Maya", r: "Klinik terbaik di Balongbendo menurut saya."},
+            {n: "Bpk. Adi", r: "Pelayanan poli umum sangat profesional."},
+            {n: "Ibu Rina", r: "Sangat terbantu dengan adanya home care."},
+            {n: "Bpk. Gani", r: "Dokter giginya sangat detail menjelaskan."},
+            {n: "Ibu Ani", r: "Imunisasi anak di sini selalu terjadwal rapi."},
+            {n: "Bpk. Rizal", r: "MCU untuk syarat kerja sangat lancar."},
+            {n: "Ibu Dewi", r: "Ruang laktasi bersih dan nyaman buat ibu."},
+            {n: "Bpk. Agus", r: "Pendaftaran online menghemat waktu saya."},
+            {n: "Ibu Indah", r: "Staf farmasi sangat jelas menjelaskan aturan obat."},
+            {n: "Bpk. Doni", r: "Satu-satunya klinik yang paling pro di area ini."}
+        ];
+
+        let reviewHtml = "";
+        for (let i = 0; i < reviews.length; i += 3) {
+            reviewHtml += `<div class="carousel-item ${i === 0 ? 'active' : ''}"><div class="row g-4 px-3">`;
+            for (let j = i; j < i + 3 && j < reviews.length; j++) {
+                reviewHtml += `<div class="col-md-4 ${j > i ? 'd-none d-md-block' : ''}"><div class="google-card text-start small"><div class="stars">★★★★★</div>"${reviews[j].r}"<br><br><b>- ${reviews[j].n}</b></div></div>`;
+            }
+            reviewHtml += `</div></div>`;
+        }
+        document.getElementById('review-container').innerHTML = reviewHtml;
+
         function sendWA() {
-            const form = document.getElementById('waForm');
-            if(!form.checkValidity()) { form.reportValidity(); return; }
             const nama = document.getElementById('nama').value;
-            const msg = `*DAFTAR ONLINE ALITA*%0ANama: ${nama}%0ANIK: ${document.getElementById('nik').value}%0APoli: ${document.getElementById('poli').value}%0AKeluhan: ${document.getElementById('keluhan').value}%0AAlergi: ${document.getElementById('alergi').value}`;
+            const poli = document.getElementById('poli').value;
+            const msg = `*DAFTAR ONLINE ALITA*%0ANama: ${nama}%0ANIK: ${document.getElementById('nik').value}%0APoli: ${poli}%0AKeluhan: ${document.getElementById('keluhan').value}%0AAlergi: ${document.getElementById('alergi').value}`;
             window.open(`https://wa.me/6282229809228?text=${msg}`, '_blank');
         }
     </script>
