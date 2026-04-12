@@ -19,7 +19,6 @@
         .clinic-name-brand { font-size: 1.6rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; line-height: 1; }
         .logo-paripurna-header { height: 85px; width: auto; }
 
-        /* Hero - Responsive Fix */
         .hero { 
             background: linear-gradient(rgba(0, 74, 153, 0.75), rgba(0, 74, 153, 0.75)), url('hero.jpg');
             background-size: cover; background-position: center top; 
@@ -39,9 +38,10 @@
         .card-service:hover { transform: translateY(-8px); background: var(--primary); color: white !important; }
         .card-service i { font-size: 2.5rem; color: var(--primary); margin-bottom: 12px; display: block; }
         .card-service p { font-size: 0.75rem; margin-top: 10px; line-height: 1.5; }
-        .card-service:hover i, .card-service:hover p, .card-service:hover h6 { color: white !important; }
 
-        .accordion-button:not(.collapsed) { background-color: var(--primary); color: white; }
+        .gallery-box { border-radius: 15px; overflow: hidden; height: 180px; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .gallery-box img { width: 100%; height: 100%; object-fit: cover; }
+        .gallery-label { position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.7); color: white; padding: 5px; font-size: 0.65rem; text-align: center; }
 
         .google-card { background: white; border-radius: 15px; padding: 25px; height: 100%; border-bottom: 5px solid #4285F4; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 20px; display: block; }
         .stars { color: var(--accent); font-size: 0.9rem; margin-bottom: 8px; }
@@ -49,10 +49,7 @@
 
         footer { background: var(--dark); color: #94a3b8; padding: 80px 0 40px; }
         .footer-title { color: white; font-weight: 700; margin-bottom: 25px; font-size: 1.1rem; border-left: 4px solid var(--secondary); padding-left: 15px; }
-        .contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; font-size: 0.9rem; }
-        .contact-item i { color: var(--secondary); font-size: 1.2rem; }
 
-        /* Floating Action Center - ICON CS UPLOADED */
         .action-center { position: fixed; bottom: 30px; right: 30px; z-index: 1000; display: flex; align-items: center; gap: 12px; }
         .label-pill { background: rgba(0, 74, 153, 0.9); color: white; padding: 8px 18px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
         .btn-wa-main {
@@ -71,6 +68,7 @@
             .clinic-name-brand { font-size: 1rem; }
             .hero { padding: 100px 0; min-height: 50vh; }
             .label-pill { display: none; }
+            .gallery-box { height: 140px; }
         }
     </style>
 </head>
@@ -120,9 +118,33 @@
                 <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-gender-female"></i><h6 class="fw-bold small">Poli KIA/KB</h6><p class="text-muted small">Layanan pemeriksaan kehamilan, imunisasi anak, dan konsultasi program KB.</p></div></div>
                 <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-droplet-half"></i><h6 class="fw-bold small">Laboratorium</h6><p class="text-muted small">Cek darah lengkap, gula darah, kolesterol, dan asam urat dengan hasil cepat.</p></div></div>
                 <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-scissors"></i><h6 class="fw-bold small">Khitan</h6><p class="text-muted small">Metode modern tanpa jahit, minim rasa nyeri, dan bisa langsung beraktivitas.</p></div></div>
-                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-balloon-heart"></i><h6 class="fw-bold small">Mom & Baby</h6><p class="text-muted small">Layanan spa bayi, pijat laktasi, dan perawatan khusus pasca melahirkan.</p></div></div>
-                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-house-heart"></i><h6 class="fw-bold small">Home Care</h6><p class="text-muted small">Kunjungan medis dokter dan perawat profesional langsung ke kediaman Anda.</p></div></div>
+                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-balloon-heart"></i><h6 class="fw-bold small">Mom & Baby</h6><p class="text-muted small">Spa bayi, pijat laktasi, dan perawatan khusus pasca melahirkan.</p></div></div>
+                <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-house-heart"></i><h6 class="fw-bold small">Home Care</h6><p class="text-muted small">Kunjungan medis dokter dan perawat profesional ke kediaman Anda.</p></div></div>
                 <div class="col-lg-3 col-6"><div class="card-service"><i class="bi bi-clipboard-pulse"></i><h6 class="fw-bold small">MCU</h6><p class="text-muted small">Pemeriksaan kesehatan berkala untuk syarat kerja atau deteksi dini penyakit.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <h4 class="fw-bold text-center mb-5 text-primary text-uppercase">Galeri Fasilitas</h4>
+        <div id="gallerySlide" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row g-2">
+                        <div class="col-3"><div class="gallery-box"><img src="depan.jpg"><div class="gallery-label">Fasad Utama</div></div></div>
+                        <div class="col-3"><div class="gallery-box"><img src="khitan1.jpg.png"><div class="gallery-label">Khitan</div></div></div>
+                        <div class="col-3"><div class="gallery-box"><img src="mombaby1.jpg.jpg"><div class="gallery-label">Mom & Baby</div></div></div>
+                        <div class="col-3"><div class="gallery-box"><img src="lab.jpg"><div class="gallery-label">Lab</div></div></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row g-2">
+                        <div class="col-3"><div class="gallery-box"><img src="senamprolanis.jpeg"><div class="gallery-label">Prolanis</div></div></div>
+                        <div class="col-3"><div class="gallery-box"><img src="penyuluhankesehatan.jpeg"><div class="gallery-label">Penyuluhan</div></div></div>
+                        <div class="col-3"><div class="gallery-box"><img src="pendaftaran.jpg"><div class="gallery-label">Pendaftaran</div></div></div>
+                        <div class="col-3"><div class="gallery-box"><img src="ugd.jpg"><div class="gallery-label">UGD 24 Jam</div></div></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -160,11 +182,11 @@
                     <p class="small lh-lg">Layanan kesehatan primer terpercaya di Balongbendo, mengedepankan kualitas dan kenyamanan setiap pasien.</p>
                 </div>
                 <div class="col-lg-4">
-                    <h6 class="footer-title text-uppercase">Layanan Unggulan</h6>
+                    <h6 class="footer-title">LAYANAN UNGGULAN</h6>
                     <ul class="list-unstyled small lh-lg text-white-50"><li>Poli Umum & Gigi</li><li>KIA & KB</li><li>Khitan & Lab</li><li>Home Care & MCU</li></ul>
                 </div>
                 <div class="col-lg-4">
-                    <h6 class="footer-title text-uppercase">Kontak & Lokasi</h6>
+                    <h6 class="footer-title">KONTAK & LOKASI</h6>
                     <div class="contact-item"><i class="bi bi-whatsapp"></i>0822 2980 9228 (Pendaftaran)</div>
                     <div class="contact-item"><i class="bi bi-geo-alt-fill"></i>Jl. Raya Balongbendo No 17, Sidoarjo</div>
                 </div>
@@ -181,8 +203,8 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0">
                 <div class="modal-header bg-primary text-white border-0"><h6 class="fw-bold mb-0">Pusat Layanan Digital Alita</h6><button class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
-                <div class="modal-body p-3">
-                    <div class="list-group gap-2 text-start">
+                <div class="modal-body p-3 text-start">
+                    <div class="list-group gap-2">
                         <button class="list-group-item list-group-item-action rounded-3 border-0 bg-light p-3" data-bs-toggle="modal" data-bs-target="#modalDaftar"><i class="bi bi-pencil-square text-primary me-3"></i><b>Pendaftaran Online</b></button>
                         <a href="https://maps.app.goo.gl/JiwBeYiBZTUrqikZ7" target="_blank" class="list-group-item list-group-item-action rounded-3 border-0 bg-light p-3"><i class="bi bi-geo-alt text-danger me-3"></i><b>Map Klinik (Lokasi)</b></a>
                         <a href="https://wa.me/6282229809228" target="_blank" class="list-group-item list-group-item-action rounded-3 border-0 bg-light p-3"><i class="bi bi-chat-dots text-info me-3"></i><b>Chat Admin (WA)</b></a>
@@ -219,7 +241,7 @@
     <script>
         AOS.init({ duration: 800, once: true });
 
-        // NOTIFY LOGIC
+        // NOTIFY
         const patients = ["Ibu Ratna", "Bpk. Hendra", "Ibu Siti", "Bpk. Yusuf", "Ibu Linda", "Bpk. Anton"];
         function showN() {
             const name = patients[Math.floor(Math.random() * patients.length)];
@@ -230,15 +252,15 @@
         }
         setInterval(showN, 8000);
 
-        // JADWAL DOKTER NAMA LENGKAP
+        // JADWAL NAMA LENGKAP
         const schedules = { 
-            0:{"Poli Umum":["dr. M Andika Ahsana (14.00-21.00)","dr. Nisrina Alya (08.00-14.00)"]}, 
+            0:{"Poli Umum":["dr. Muhammad Andika Ahsana (14.00-21.00)","dr. Nisrina Alya (08.00-14.00)"]}, 
             1:{"Poli Umum":["dr. Hafmi Ersya (08.00-14.00)","dr. Dhita Mevia (14.00-20.00)"],"Poli Gigi":["drg. Hafmi Salis (16.00-21.00)"]}, 
             2:{"Poli Umum":["dr. Hafmi Ersya (08.00-14.00)","dr. Dhita Mevia (14.00-20.00)"],"Poli Gigi":["drg. Hafmi Salis (08.00-13.00)"]}, 
             3:{"Poli Umum":["dr. Dhita Mevia (08.00-14.00)","dr. Hafmi Ersya (14.00-21.00)"],"Poli Gigi":["drg. Hafmi Salis (16.00-21.00)"]}, 
             4:{"Poli Umum":["dr. Dhita Mevia (08.00-14.00)","dr. Hafmi Ersya (14.00-21.00)"],"Poli Gigi":["drg. Hafmi Salis (08.00-13.00)"]}, 
             5:{"Poli Umum":["dr. Hafmi Ersya (08.00-14.00)","dr. Dhita Mevia (14.00-21.00)"],"Poli Gigi":["drg. Hafmi Salis (16.00-21.00)"]}, 
-            6:{"Poli Umum":["dr. Nisrina Alya (08.00-14.00)","dr. M Andika Ahsana (14.00-21.00)"],"Poli Gigi":["drg. Hafmi Salis (08.00-13.00)"]} 
+            6:{"Poli Umum":["dr. Nisrina Alya (08.00-14.00)","dr. Muhammad Andika Ahsana (14.00-21.00)"],"Poli Gigi":["drg. Hafmi Salis (08.00-13.00)"]} 
         };
         const today = new Date().getDay();
         document.getElementById('day-text').innerText = ["MINGGU", "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU"][today];
@@ -247,9 +269,9 @@
 
         // REVIEWS NATURAL
         const reviews = [ 
-            {n: "Ibu Ratna S.", r: "Alhamdulillah, pelayanan sangat memuaskan dan cepat. Dokternya ramah banget dengerin keluhan saya secara detail. Recomended banget buat warga Balongbendo!"}, 
-            {n: "Bpk. Hendra W.", r: "Bawa anak khitan di sini benar-benar tanpa drama. Metodenya modern, selesai tindakan anak langsung bisa jalan sendiri. Terima kasih dr. Andika dan tim!"}, 
-            {n: "Ibu Siti Zulaiha", r: "Admin pendaftaran online sangat membantu dan responsif. Pas datang jadwalnya rapi jadi gak perlu antre lama. Klinik paling profesional di area ini!"}
+            {n: "Ibu Ratna S.", r: "Alhamdulillah, pelayanan sangat cepat dan ramah. Dokternya sabar banget dengerin keluhan saya. Recomended banget!"}, 
+            {n: "Bpk. Hendra W.", r: "Bawa anak khitan di sini benar-benar tanpa drama. Selesai tindakan anak langsung bisa jalan sendiri. Terima kasih dr. Andika!"}, 
+            {n: "Ibu Siti Zulaiha", r: "Admin WA sangat membantu. Pas datang jadwalnya rapi jadi gak perlu antre lama. Klinik paling profesional!"}
         ];
         let reviewHtml = ""; for (let i = 0; i < reviews.length; i += 3) { reviewHtml += `<div class="carousel-item ${i === 0 ? 'active' : ''}"><div class="row g-4 px-3">`; for (let j = i; j < i + 3 && j < reviews.length; j++) { reviewHtml += `<div class="col-md-4 ${j > i ? 'd-none d-md-block' : ''}"><div class="google-card text-start small"><div class="stars">★★★★★</div><p class="review-text">"${reviews[j].r}"</p><br><b>- ${reviews[j].n}</b></div></div>`; } reviewHtml += `</div></div>`; }
         document.getElementById('review-container').innerHTML = reviewHtml;
